@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var connectionString = "mongodb connection string goes here" // env variables in GO
+var connectionString = "mongodb+srv://jesseemana:moviespassword@cluster0.5fadp9r.mongodb.net/?retryWrites=true&w=majority" // env variables in GO
 var dbName = "movies"
 var colName = "watchlist"
 
