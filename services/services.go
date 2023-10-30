@@ -1,27 +1,27 @@
 package services
 
 import (
+	"context"
 	"fmt"
 	"log"
-	"context"
 
-	model "gihub.com/jesseemana/movieapi/models"
-	"go.mongodb.org/mongo-driver/mongo"
+	moviemodel "github.com/jesseemana/moviesapi/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var collection *mongo.Collection
 
 // Insert a single movie into the database 
-func InsertMovie(movie model.Movies) {
+func InsertMovie(movie moviemodel.Movie) {
 	inserted, err := collection.InsertOne(context.Background(), movie)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Inserted 1 movie in database with id:", inserted.insertedID)
+	fmt.Println("Inserted 1 movie in database with id:", inserted.InsertedID)
 }
 
 // Update a movie in the database
